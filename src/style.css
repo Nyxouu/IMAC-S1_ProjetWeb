@@ -1,14 +1,15 @@
 header {
     color: rgb(255, 255, 255);
     background-color:orangered;
-    width: 100vw;
     border-bottom: 2px;
     border-color: orangered ;
     padding: 20px 10px;
     overflow: hidden;
+}
 
-    
-
+#logo-site{
+    height: 100px;
+    width: 100px;
 }
 
 h1 {
@@ -38,7 +39,6 @@ footer {
     color: rgb(255, 255, 255);
     background-color:orangered;
     height: auto;
-    width: 100vw;
     border-bottom: 2px;
     border-color: white;
     padding: 20px 10px;
