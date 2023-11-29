@@ -24,7 +24,11 @@ ul{
 #right_header{
     display: flex;
     justify-content: flex-end;
+    align-items: center;
 }
+
+
+
 
 
 main {
@@ -54,7 +58,10 @@ img{
     width: 30px;
 }
 
-
+.header_image {
+    margin-left: 20px;
+    margin-right: 5px;
+}
 
 body{
     padding: 0px;
