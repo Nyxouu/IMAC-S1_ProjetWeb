@@ -1,3 +1,8 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
 header {
     color: rgb(255, 255, 255);
     background-color:orangered;
@@ -12,10 +17,6 @@ header {
     width: 100px;
 }
 
-h1 {
-    padding-left: 20px;
-}
-
 #premier_bandeau{
     list-style-type: none;
 
@@ -27,13 +28,20 @@ h1 {
 
 main {
     height: 90vh;
-    width: 100vw;
     background-image: url("../media/img/index-background-computer.jpeg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100% auto;
-    filter: blur(4px);
-    -webkit-filter: blur(4px);
+    background-size: cover;
+
+    color: white;
+    text-align: center;
+}
+
+#text-presentation {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    width: 40%;
+    margin-top: 20vh;
 }
 
 footer {
@@ -50,11 +58,4 @@ footer {
 img{
     height: 30px;
     width: 30px;
-}
-
-
-
-body{
-    padding: 0px;
-    margin: 0px;
 }
