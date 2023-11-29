@@ -1,23 +1,59 @@
 header {
-    color: white;
+    color: rgb(255, 255, 255);
     background-color:orangered;
-    height: 10vh;
+    width: 100vw;
+    border-bottom: 2px;
+    border-color: orangered ;
+    padding: 20px 10px;
+    overflow: hidden;
+
+    
+
+}
+
+h1 {
+    padding-left: 20px;
+}
+
+#premier_bandeau{
+    list-style-type: none;
+
+}
+#second_bandeau{
+    list-style-type: none;
+}
+
+
+main {
+    height: 110vh;
+    width: 100vw;
+    background-image: url("../media/img/food.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 130%;
+    filter: blur(4px);
+}
+
+footer {
+    color: rgb(255, 255, 255);
+    background-color:orangered;
+    height: auto;
+    width: 100vw;
     border-bottom: 2px;
     border-color: white;
     padding: 20px 10px;
     overflow: hidden;
+    text-align: center;
 }
 
-h1 {
-    text-decoration: none;
-    padding-left: 20px;
+img{
+    height: 30px;
+    width: 30px;
 }
 
-main {
-    height: 90vh;
-    background-image: url("../media/img/pexels-photo-1400172.jpeg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: auto 100%;
-    filter: blur(4px);
+
+
+body{
+    padding: 0px;
+    margin: 0px;
 }
