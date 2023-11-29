@@ -10,21 +10,27 @@ header {
     border-color: orangered ;
     padding: 20px 10px;
     overflow: hidden;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 50% 50%;
 }
 
 #logo-site{
-    height: 100px;
-    width: 100px;
+    height: 10vh;
+    width: 22vw;
 }
 
-#premier_bandeau{
+ul{
     list-style-type: none;
-
-}
-#second_bandeau{
-    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
 }
 
+#right_header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
 
 main {
     height: 90vh;
@@ -58,4 +64,9 @@ footer {
 img{
     height: 30px;
     width: 30px;
+}
+
+.header_image {
+    margin-left: 20px;
+    margin-right: 5px;
 }
