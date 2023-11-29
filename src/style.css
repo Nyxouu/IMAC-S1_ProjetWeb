@@ -8,20 +8,14 @@ header {
 }
 
 #logo-site{
-    height: 100px;
-    width: 100px;
+    height: 10vh;
+    width: 22vw;
 }
 
-h1 {
-    padding-left: 20px;
-}
-
-#premier_bandeau{
+ul{
     list-style-type: none;
-
-}
-#second_bandeau{
-    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
 }
 
 
