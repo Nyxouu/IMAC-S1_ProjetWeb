@@ -26,13 +26,14 @@ h1 {
 
 
 main {
-    height: 110vh;
+    height: 90vh;
     width: 100vw;
-    background-image: url("../media/img/food.jpg");
+    background-image: url("../media/img/index-background-computer.jpeg");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: auto 130%;
+    background-size: 100% auto;
     filter: blur(4px);
+    -webkit-filter: blur(4px);
 }
 
 footer {
