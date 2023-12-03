@@ -16,8 +16,8 @@ header {
 }
 
 #logo-site{
-    height: 10vh;
-    width: 22vw;
+    height: 50px;
+    width: 200px;
 }
 
 ul{
@@ -30,6 +30,19 @@ ul{
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.header_image {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.header_text {
+    margin-right: 10px;
+}
+
+a {
+    color: #442a00;
 }
 
 main {
@@ -67,7 +80,3 @@ img{
     width: 30px;
 }
 
-.header_image {
-    margin-left: 20px;
-    margin-right: 5px;
-}
