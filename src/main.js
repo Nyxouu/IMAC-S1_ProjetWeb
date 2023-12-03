@@ -1,14 +1,6 @@
-function searchFood() {
-    const foodInput = document.getElementById('foodInput');
-    const foodName = foodInput.value;
+const apiKey = 'f9bc3e174f294092ba0e6deb7ba41f1f';
 
-    if (!foodName) {
-      alert('Please enter a food name.');
-      return;
-    }
-
-    // Replace 'YOUR_API_KEY' with the actual API key for foodAPI
-    const apiKey = 'f9bc3e174f294092ba0e6deb7ba41f1f';
+function searchRandomFood() {
     const apiUrl = `https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`;
 
     // Make an AJAX request to the foodAPI
@@ -17,7 +9,11 @@ function searchFood() {
       .then(data => {
         // Handle the response data
         const resultElement = document.getElementById('result');
-        resultElement.innerHTML = `<p>${data.recipes[0].title}</p>`;
+        const ingredients = data.extendedIngredients.map(ingredient => ingredient.originalString);
+        resultElement.innerHTML = ` <h2>${data.recipes[0].title}</h2>
+                                    <img src=${data.recipes[0].image} alt=food-image>
+                                    <h3>Ingrédients</h3>
+                                    <ul>${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}</ul>`;
       })
       .catch(error => {
         console.error('Error fetching data:', error);
