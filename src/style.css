@@ -45,23 +45,64 @@ a {
     color: #442a00;
 }
 
-main {
-    height: 90vh;
-    background-image: url("../media/img/index-background-computer.jpeg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-    
+h1{
+    margin: 0px;
+    padding: 0px;    
+}
 
+#first-part{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../media/img/index-background-computer.jpeg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#first-part>.text-presentation{
+    color: white;
+    text-align: center;
+
+}
+
+hr {
+    border-color: orangered;
+    height: 10px;
+}
+
+#second-part{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../media/img/brunch2.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#second-part>.text-presentation{
     color: white;
     text-align: center;
 }
 
-#text-presentation {
-    width: 40%;
-    padding: 20vh;
+#third-part{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../media/img/brunch1.jpg") ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+#third-part>.text-presentation{
+    color: white;
+    text-align: center;
+}
+
+#random-text-presentation{
+    height: 90vh;
+    width: 100vw;
+}
+
+#search-text-presentation{
+    height: 90vh;
+    width: 100vw;
 }
 
 footer {
