@@ -29,16 +29,19 @@ ul{
 #right_header{
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: center;    
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;  
+    
 }
 
 .header_image {
     margin-left: 10px;
     margin-right: 5px;
-}
-
-.header_text {
-    margin-right: 10px;
 }
 
 a {
@@ -49,50 +52,59 @@ h1{
     margin: 0px;
     padding: 0px;    
 }
-
-#first-part{
-    width: 100vw;
-    height: 100vh;
-    background-image: url("../media/img/index-background-computer.jpeg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-#first-part>.text-presentation{
-    color: white;
-    text-align: center;
-
-}
-
 hr {
     border-color: orangered;
     height: 10px;
 }
 
+
+.text-presentation{
+    color: white;
+    text-align: center;
+    background-color: black;
+    opacity: 0.75;
+}
+
+#first-part,#second-part,#third-part{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100vh;
+}
+
+#first-part{
+    background-image: url("../media/img/index-background-computer.jpeg") ;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+}
 #second-part{
     width: 100vw;
     height: 100vh;
     background-image: url("../media/img/brunch2.jpg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    display: flex;
+    justify-content: start;
+    align-items: center;  
 }
-#second-part>.text-presentation{
-    color: white;
-    text-align: center;
-}
-
 #third-part{
     width: 100vw;
     height: 100vh;
     background-image: url("../media/img/brunch1.jpg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    display: flex;
+    justify-content: end;
+    align-items: center;  
 }
-#third-part>.text-presentation{
-    color: white;
-    text-align: center;
+
+#first-part>.text-presentation,#second-part>.text-presentation,#third-part>.text-presentation{
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    padding: 0 10px;  
 }
 
 #random-text-presentation{
@@ -103,6 +115,10 @@ hr {
 #search-text-presentation{
     height: 90vh;
     width: 100vw;
+}
+
+.text-link{
+    color: white;
 }
 
 footer {
