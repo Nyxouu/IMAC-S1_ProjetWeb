@@ -18,6 +18,11 @@ header {
 #logo-site{
     height: 50px;
     width: 200px;
+    margin-left: 10px;
+}
+
+#logo-site-telephone{
+    display: none;
 }
 
 ul{
@@ -54,6 +59,10 @@ span {
 h1{
     margin: 0px;
     padding: 0px;    
+}
+
+main{
+    min-height: 100vh;
 }
 hr {
     border-color: orangered;
@@ -137,3 +146,17 @@ img{
     width: 30px;
 }
 
+@media screen and (max-width: 500px){
+    .header_image span{
+        display:none;
+    }
+    #logo-site{
+        display: none;
+    }
+    #logo-site-telephone{
+        display: block;
+        height: 50px;
+        width: 70px;
+        margin-left: 10px;
+    }
+}
