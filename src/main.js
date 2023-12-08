@@ -15,17 +15,31 @@ function findRandomRecipe() {
 }
 
 function searchRecipe() {
+  //const searchInput = document.getElementById('result').value;
   const apiUrl = `https://api.spoonacular.com/recipes/autocomplete?number=10&query=chick&apiKey=${apiKey}`;
 
   // Requette AJAX
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
-      const resultElement = document.getElementById('result');
-      resultElement.innerHTML = ` <ul>${data.map(recipe => `<li>
-      <h2 id="recipe-title">${recipe.title}</h2>
-      <img src=${recipe.image} id="recipe-image" alt=food-image>
-      </li>`).join('')}</ul>`
+      //Récupération des IDs des recettes trouvées
+      let recipesIDs = data.map(recipe => recipe.id).join(',');
+
+      const recipesInfosAPI = `https://api.spoonacular.com/recipes/informationBulk?ids=${recipesIDs}&apiKey=${apiKey}`
+      //Parcours des recettes trouvées en détail
+      fetch(recipesInfosAPI)
+      .then(response => response.json(recipesInfosAPI))
+      .then(datas => {
+        const resultElement = document.getElementById('result');
+        resultElement.innerHTML = ` <ul>${datas.map(recipe => `<li>
+        <img src=${recipe.image} class="recipe-image" alt="food-image">
+        <h2 class="recipe-title">${recipe.title}</h2>
+        </li>`).join('')}</ul>`
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+      
       
     })
     .catch(error => {
