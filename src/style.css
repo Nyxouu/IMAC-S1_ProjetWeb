@@ -183,7 +183,8 @@ article h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 #random_dish{
@@ -193,4 +194,19 @@ article h1 {
 #search_dish{
     flex-direction: row; 
 }
+
+.recipe-image,#recipe-image{
+    height: 300px;
+    width: auto;
+    border: solid;
+    border-radius: 30px;
+}
+
+#food-result {
+    display:flex;
+    flex-wrap: wrap;
+
+}
+
+
 
