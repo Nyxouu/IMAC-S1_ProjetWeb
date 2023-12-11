@@ -167,9 +167,23 @@ button {
     width: 150px;
 }
 
+input {
+    width: 180px;
+    height: 20px;
+    margin-right: 5vw;
+    border-radius: 5px;
+}
+
 .recipe #recipe-title {
     padding-top: 30px;
     padding-bottom: 10px;
+}
+
+.recipe-title {
+    padding-bottom: 2vh;
+    padding-top: 3vh;
+    max-width: 455px;
+    text-align: center;
 }
 
 #recipe-presentation {
@@ -177,6 +191,11 @@ button {
     flex-direction: column;
     align-items: center;
     text-align: center;
+}
+
+#recipe-presentation h1 {
+    font-size: xx-large;
+    font-weight: bold;
 }
 
 .recipe div {
@@ -190,12 +209,12 @@ button {
 }
 
 .recipe-informations {
-    padding-left: 2vw;
+    padding-left: 3vw;
     padding-bottom: 30px;
 }
 
 .recipe-informations h2 {
-    padding-left: 3vw;
+    padding-left: 2vw;
 }
 
 .recipe hr {
@@ -224,7 +243,9 @@ button {
     height: 300px;
     width: auto;
     border: solid;
+    border-color: orangered;
     border-radius: 30px;
+    padding-bottom: 30px;
 }
 
 #food-result {

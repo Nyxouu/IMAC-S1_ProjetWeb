@@ -1,4 +1,4 @@
-const apiKey = 'aedb95c7b4f74367aa196a1afa624848';
+const apiKey = 'c0da713fc0174e09b6af9ee5aea1ba8b';
 
 let searchRecipesData = new Object();
 
@@ -19,14 +19,20 @@ function findRandomRecipe() {
 function searchRecipe() {
   const searchInput = document.getElementById('search-input');
   const searchValue = searchInput.value;
-  const apiUrl = `https://api.spoonacular.com/recipes/autocomplete?number=10&query=${searchValue}&apiKey=${apiKey}`;
+  const apiUrl = `https://api.spoonacular.com/recipes/autocomplete?number=10&query=${searchValue}&apiKey=${apiKey}`;  
+
+  //Balance l'affichage entre une recette complète et un ensemble de recette
+  const resultElement = document.getElementById('result');
+  if (resultElement.className === "recipe") {
+    resultElement.classList.toggle("recipe");    
+  }
 
   // Requette AJAX
   fetch(apiUrl)
     .then(response => response.json())
     .then(data => {
       //Récupération des IDs des recettes trouvées
-      let recipesIDs = data.map(recipe => recipe.id).join(',');
+      const recipesIDs = data.map(recipe => recipe.id).join(',');
 
       const recipesInfosAPI = `https://api.spoonacular.com/recipes/informationBulk?ids=${recipesIDs}&apiKey=${apiKey}`
       //Parcours des recettes trouvées en détail
@@ -61,7 +67,7 @@ function displayRecipeFromSearch(id) {
 
 function displayRecipe(recipe, element) {
   const resultElement = document.getElementById(element);
-  resultElement.className = "recipe"
+  resultElement.classList.toggle("recipe");
 
   resultElement.innerHTML = ` <section id="recipe-presentation">
                               <h1 id="recipe-title">${recipe.title}</h1>
