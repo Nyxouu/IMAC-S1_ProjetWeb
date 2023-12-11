@@ -1,4 +1,4 @@
-const apiKey = 'cd75985f60ac4866b671832f3009dc74';
+const apiKey = 'd2868b6eea664c58ae75dfc18a762251';
 
 let searchRecipesData = new Object();
 
@@ -39,11 +39,10 @@ function searchRecipe() {
 
         let i = 0;
         resultElement.innerHTML = ` <ul>${datas.map(recipe => `<li>
-        <div class="food-result" onclick="displayRecipeFromSearch(${i})">
+        <div class="food-result" onclick="displayRecipeFromSearch(${i++})">
+        <h1 class="recipe-title">${recipe.title}</h1>
         <img src=${recipe.image} class="recipe-image" alt="food-image">
-        <h2 class="recipe-title">${recipe.title}</h2>
         </div>
-        ${i++}
         </li>`).join('')}</ul>`
       })
       .catch(error => {
