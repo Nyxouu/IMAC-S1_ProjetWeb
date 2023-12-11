@@ -160,8 +160,15 @@ button {
     width: 150px;
 }
 
-article h1 {
-    margin-top: 20px;
+.recipe #recipe-title {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+article hr {
+    margin-right: 45vw;
+    width: 30vw;
 }
 
 @media screen and (max-width: 500px){
@@ -207,6 +214,3 @@ article h1 {
     flex-wrap: wrap;
 
 }
-
-
-

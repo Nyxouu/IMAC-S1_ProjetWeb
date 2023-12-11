@@ -38,7 +38,7 @@ function searchRecipe() {
 
         let i = 0;
         resultElement.innerHTML = ` <ul id="food-result">${datas.map(recipe => `<li>
-        <div class="food-result" onclick="displayRecipeFromSearch(${i})">
+        <div class="food-result" onclick="displayRecipeFromSearch(${i++})">
         <h1 class="recipe-title">${recipe.title}</h1>
         <img src=${recipe.image} class="recipe-image" alt="food-image">
         </div>
