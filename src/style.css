@@ -1,6 +1,7 @@
 body{
     padding: 0px;
     margin: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -31,6 +32,11 @@ ul{
     margin: 0px;
 }
 
+header li {
+    display: flex;
+    align-items: center;
+}
+
 #right_header{
     display: flex;
     justify-content: flex-end;
@@ -57,6 +63,7 @@ span {
     padding-left: 7px;
     text-decoration: none;
 }
+
 h1{
     margin: 0px;
     padding: 0px;    
@@ -163,27 +170,38 @@ button {
 .recipe #recipe-title {
     padding-top: 30px;
     padding-bottom: 10px;
+}
+
+#recipe-presentation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
 }
 
-article hr {
-    margin-right: 45vw;
-    width: 30vw;
+.recipe div {
+    display: flex;
+    flex-direction: row;
 }
 
-@media screen and (max-width: 500px){
-    .header_image span{
-        display:none;
-    }
-    #logo-site{
-        display: none;
-    }
-    #logo-site-telephone{
-        display: block;
-        height: 50px;
-        width: 70px;
-        margin-left: 10px;
-    }
+.recipe div p {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.recipe-informations {
+    padding-left: 2vw;
+    padding-bottom: 30px;
+}
+
+.recipe-informations h2 {
+    padding-left: 3vw;
+}
+
+.recipe hr {
+    margin-right: 60vw;
+    margin-left: 3.5vw;
+    width: 28.5vw;
 }
 
 #random_dish,#search_dish{
@@ -212,5 +230,28 @@ article hr {
 #food-result {
     display:flex;
     flex-wrap: wrap;
+    justify-content: space-evenly; 
+}
 
+
+
+@media screen and (max-width: 550px){
+    .header_image span{
+        display:none;
+    }
+    #logo-site{
+        display: none;
+    }
+    #logo-site-telephone{
+        display: block;
+        height: 50px;
+        width: 70px;
+        margin-left: 10px;
+    }
+    .recipe-image{
+        height: 200px;
+        width: auto;
+        border: solid;
+        border-radius: 20px;
+    }
 }

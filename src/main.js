@@ -61,15 +61,24 @@ function displayRecipeFromSearch(id) {
 
 function displayRecipe(recipe, element) {
   const resultElement = document.getElementById(element);
-  element.className = "recipe"
-  resultElement.innerHTML = ` <h1 id="recipe-title">${recipe.title}</h1>
-                              <img src=${recipe.image} id="recipe-image" alt=food-image>
+  resultElement.className = "recipe"
+
+  resultElement.innerHTML = ` <section id="recipe-presentation">
+                              <h1 id="recipe-title">${recipe.title}</h1>
+                              <img src=${recipe.image} class="recipe-image" alt=food-image>
+                              <div>
                               <p>Servings : ${recipe.servings}</p>
                               <p>Estimated time : ${recipe.readyInMinutes}</p>
+                              </div>
+                              </section>
                               <hr>
-                              <h2 id="recipe-ingredients-title">Ingredients</h2>
+                              <section class="recipe-informations">
+                              <h2>Ingredients</h2>
                               <ul>${recipe.extendedIngredients.map(ingredient => `<li>${ingredient.original}</li>`).join('')}</ul>
+                              </section>
                               <hr>
-                              <h2 id="recipe-instructions-title">Instructions</h2>
-                              <p>${recipe.instructions}</p>`;
+                              <section class="recipe-informations">
+                              <h2>Instructions</h2>
+                              <p>${recipe.instructions}</p>
+                              </section>`;
 }
