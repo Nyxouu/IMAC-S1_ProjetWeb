@@ -15,8 +15,9 @@ function findRandomRecipe() {
 }
 
 function searchRecipe() {
-  //const searchInput = document.getElementById('result').value;
-  const apiUrl = `https://api.spoonacular.com/recipes/autocomplete?number=10&query=chick&apiKey=${apiKey}`;
+  const searchInput = document.getElementById('search-input');
+  const searchValue = searchInput.value;
+  const apiUrl = `https://api.spoonacular.com/recipes/autocomplete?number=10&query=${searchValue}&apiKey=${apiKey}`;
 
   // Requette AJAX
   fetch(apiUrl)
