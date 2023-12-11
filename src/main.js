@@ -1,4 +1,4 @@
-const apiKey = 'd2868b6eea664c58ae75dfc18a762251';
+const apiKey = 'aedb95c7b4f74367aa196a1afa624848';
 
 let searchRecipesData = new Object();
 
