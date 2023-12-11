@@ -1,4 +1,4 @@
-const apiKey = 'd2868b6eea664c58ae75dfc18a762251';
+const apiKey = 'aedb95c7b4f74367aa196a1afa624848';
 
 let searchRecipesData = new Object();
 
@@ -9,7 +9,6 @@ function findRandomRecipe() {
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
-        console.log(data.recipes[0]);
         displayRecipe(data.recipes[0], 'recipe')
       })
       .catch(error => {
@@ -40,7 +39,7 @@ function searchRecipe() {
         let i = 0;
         resultElement.innerHTML = ` <ul id="food-result">${datas.map(recipe => `<li>
         <div class="food-result" onclick="displayRecipeFromSearch(${i})">
-        <h1 id="recipe-title">${recipe.title}</h1>
+        <h1 class="recipe-title">${recipe.title}</h1>
         <img src=${recipe.image} class="recipe-image" alt="food-image">
         </div>
         </li>`).join('')}</ul>`
@@ -62,6 +61,7 @@ function displayRecipeFromSearch(id) {
 
 function displayRecipe(recipe, element) {
   const resultElement = document.getElementById(element);
+  element.className = "recipe"
   resultElement.innerHTML = ` <h1 id="recipe-title">${recipe.title}</h1>
                               <img src=${recipe.image} id="recipe-image" alt=food-image>
                               <p>Servings : ${recipe.servings}</p>
@@ -71,5 +71,5 @@ function displayRecipe(recipe, element) {
                               <ul>${recipe.extendedIngredients.map(ingredient => `<li>${ingredient.original}</li>`).join('')}</ul>
                               <hr>
                               <h2 id="recipe-instructions-title">Instructions</h2>
-                              <p>${recipe.instructions}</p>`
+                              <p>${recipe.instructions}</p>`;
 }
