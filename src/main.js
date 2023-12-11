@@ -1,4 +1,6 @@
-const apiKey = 'f9bc3e174f294092ba0e6deb7ba41f1f';
+const apiKey = 'cd75985f60ac4866b671832f3009dc74';
+
+let searchRecipesData;
 
 function findRandomRecipe() {
     const apiUrl = `https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`;
@@ -7,7 +9,8 @@ function findRandomRecipe() {
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
-        displayRecipe(data, 'recipe')
+        console.log(data.recipes[0]);
+        displayRecipe(data.recipes[0], 'recipe')
       })
       .catch(error => {
         console.error('Error fetching data:', error);
@@ -29,12 +32,16 @@ function searchRecipe() {
       const recipesInfosAPI = `https://api.spoonacular.com/recipes/informationBulk?ids=${recipesIDs}&apiKey=${apiKey}`
       //Parcours des recettes trouvées en détail
       fetch(recipesInfosAPI)
-      .then(response => response.json(recipesInfosAPI))
+      .then(response => response.json())
       .then(datas => {
         const resultElement = document.getElementById('result');
+        searchRecipesData = datas.map(recipe => ).join('');
+
         resultElement.innerHTML = ` <ul>${datas.map(recipe => `<li>
+        <div class="food-result" data-recipe='${JSON.stringify(recipe)}' onclick="displayRecipeFromSearch()">
         <img src=${recipe.image} class="recipe-image" alt="food-image">
         <h2 class="recipe-title">${recipe.title}</h2>
+        </div>
         </li>`).join('')}</ul>`
       })
       .catch(error => {
@@ -48,16 +55,21 @@ function searchRecipe() {
     });
 }
 
-function displayRecipe(data, element) {
+function displayRecipeFromSearch() {
+  const recipeData = JSON.parse(element.getAttribute('data-recipe'));
+  displayRecipe(recipeData, 'result')
+}
+
+function displayRecipe(recipe, element) {
   const resultElement = document.getElementById(element);
-  resultElement.innerHTML = ` <h2 id="recipe-title">${data.recipes[0].title}</h2>
-                              <img src=${data.recipes[0].image} id="recipe-image" alt=food-image>
-                              <p>Servings : ${data.recipes[0].servings}</p>
-                              <p>Estimated time : ${data.recipes[0].readyInMinutes}</p>
+  resultElement.innerHTML = ` <h1 id="recipe-title">${recipe.title}</h1>
+                              <img src=${recipe.image} id="recipe-image" alt=food-image>
+                              <p>Servings : ${recipe.servings}</p>
+                              <p>Estimated time : ${recipe.readyInMinutes}</p>
                               <hr>
-                              <h3 id="recipe-ingredients-title">Ingredients</h3>
-                              <ul>${data.recipes[0].extendedIngredients.map(ingredient => `<li>${ingredient.original}</li>`).join('')}</ul>
+                              <h2 id="recipe-ingredients-title">Ingredients</h2>
+                              <ul>${recipe.extendedIngredients.map(ingredient => `<li>${ingredient.original}</li>`).join('')}</ul>
                               <hr>
-                              <h3 id="recipe-instructions-title">Instructions</h3>
-                              <p>${data.recipes[0].instructions}</p>`
+                              <h2 id="recipe-instructions-title">Instructions</h2>
+                              <p>${recipe.instructions}</p>`
 }
