@@ -1,6 +1,6 @@
 const apiKey = 'cd75985f60ac4866b671832f3009dc74';
 
-let searchRecipesData;
+let searchRecipesData = new Object();
 
 function findRandomRecipe() {
     const apiUrl = `https://api.spoonacular.com/recipes/random?number=1&apiKey=${apiKey}`;
@@ -35,13 +35,15 @@ function searchRecipe() {
       .then(response => response.json())
       .then(datas => {
         const resultElement = document.getElementById('result');
-        searchRecipesData = datas.map(recipe => ).join('');
+        searchRecipesData = datas;
 
+        let i = 0;
         resultElement.innerHTML = ` <ul>${datas.map(recipe => `<li>
-        <div class="food-result" data-recipe='${JSON.stringify(recipe)}' onclick="displayRecipeFromSearch()">
+        <div class="food-result" onclick="displayRecipeFromSearch(${i})">
         <img src=${recipe.image} class="recipe-image" alt="food-image">
         <h2 class="recipe-title">${recipe.title}</h2>
         </div>
+        ${i++}
         </li>`).join('')}</ul>`
       })
       .catch(error => {
@@ -55,9 +57,8 @@ function searchRecipe() {
     });
 }
 
-function displayRecipeFromSearch() {
-  const recipeData = JSON.parse(element.getAttribute('data-recipe'));
-  displayRecipe(recipeData, 'result')
+function displayRecipeFromSearch(id) {
+  displayRecipe(searchRecipesData[id], 'result');
 }
 
 function displayRecipe(recipe, element) {
