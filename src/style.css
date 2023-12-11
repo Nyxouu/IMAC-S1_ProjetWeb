@@ -134,8 +134,6 @@ footer {
     color: rgb(255, 255, 255);
     background-color:orangered;
     height: auto;
-    border-bottom: 2px;
-    border-color: white;
     padding: 20px 10px;
     overflow: hidden;
     text-align: center;
@@ -160,3 +158,19 @@ img{
         margin-left: 10px;
     }
 }
+
+#random_dish,#search_dish{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#random_dish{
+    flex-direction: column; 
+}
+
+#search_dish{
+    flex-direction: row; 
+}
+
