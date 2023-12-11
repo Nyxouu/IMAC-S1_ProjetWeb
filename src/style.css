@@ -18,6 +18,11 @@ header {
 #logo-site{
     height: 50px;
     width: 200px;
+    margin-left: 10px;
+}
+
+#logo-site-telephone{
+    display: none;
 }
 
 ul{
@@ -29,70 +34,86 @@ ul{
 #right_header{
     display: flex;
     justify-content: flex-end;
-    align-items: center;
+    align-items: center;    
+}
+
+nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;  
+    
 }
 
 .header_image {
-    margin-left: 10px;
+    margin-left: 20px;
     margin-right: 5px;
-}
-
-.header_text {
-    margin-right: 10px;
 }
 
 a {
     color: #442a00;
 }
 
+span {
+    padding-left: 7px;
+}
 h1{
     margin: 0px;
     padding: 0px;    
 }
 
-#first-part{
-    width: 100vw;
-    height: 100vh;
-    background-image: url("../media/img/index-background-computer.jpeg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+main{
+    min-height: 100vh;
 }
-#first-part>.text-presentation{
-    color: white;
-    text-align: center;
-
-}
-
 hr {
     border-color: orangered;
     height: 10px;
 }
 
+
+.text-presentation{
+    color: white;
+    text-align: center;
+    background-color: black;
+    opacity: 0.75;
+}
+
+#first-part,#second-part,#third-part{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#first-part{
+    background-image: url("../media/img/backgrounds/first-part.jpeg") ;
+}
 #second-part{
     width: 100vw;
     height: 100vh;
-    background-image: url("../media/img/brunch2.jpg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-image: url("../media/img/backgrounds/second-part.jpg") ;
 }
-#second-part>.text-presentation{
-    color: white;
-    text-align: center;
-}
-
 #third-part{
     width: 100vw;
     height: 100vh;
-    background-image: url("../media/img/brunch1.jpg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    background-image: url("../media/img/backgrounds/third-part.jpg") ;
 }
-#third-part>.text-presentation{
-    color: white;
-    text-align: center;
+
+#first-part>.text-presentation,#second-part>.text-presentation,#third-part>.text-presentation{
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    padding: 0 20px;  
+    border: solid;
+    border-radius: 5px;
+    border-color: white;
 }
 
 #random-text-presentation{
@@ -103,6 +124,10 @@ hr {
 #search-text-presentation{
     height: 90vh;
     width: 100vw;
+}
+
+.text-link{
+    color: white;
 }
 
 footer {
@@ -121,3 +146,17 @@ img{
     width: 30px;
 }
 
+@media screen and (max-width: 500px){
+    .header_image span{
+        display:none;
+    }
+    #logo-site{
+        display: none;
+    }
+    #logo-site-telephone{
+        display: block;
+        height: 50px;
+        width: 70px;
+        margin-left: 10px;
+    }
+}
